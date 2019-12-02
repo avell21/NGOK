@@ -1,0 +1,59 @@
+{
+  "name": "blueDot",
+  "engines": {
+    "node": "10.16.3"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "backend for financer, platform for facilitating loans in australia",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && ./copy.sh && node dist/src/index.js",
+    "dev": "ts-node-dev -r dotenv/config --respawn --transpileOnly src/index.ts",
+    "start:worker": "yarn build && node dist/src/workers/email/consumer.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@sentry/node": "^5.9.0",
+    "apollo-server-express": "^2.9.12",
+    "aws-sdk": "^2.580.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "bull": "^3.12.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "graphql-import": "^0.7.1",
+    "graphql-type-json": "^0.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.1",
+    "knex": "^0.20.3",
+    "moment": "^2.24.0",
+    "objection": "^1.6.11",
+    "objection-unique": "^1.2.0",
+    "pg": "^7.14.0",
+    "typescript": "^3.7.2",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/bull": "^3.10.6",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.14",
+    "dotenv": "^8.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
+}
