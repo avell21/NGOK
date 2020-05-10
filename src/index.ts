@@ -3,7 +3,7 @@ import express = require("express");
 import { ApolloServer } from "apollo-server-express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import api from "./api";
+import api from "./apollo-serve";
 import Sentry = require("@sentry/node");
 import { Model } from "objection";
 import Knex from "knex";
@@ -43,5 +43,7 @@ app.use(function onError(err, req, res, next) {
 // start the weekly digest email
 // workers.startWeeklyEmail();
 app.listen(process.env.PORT, () => {
-  console.log(`the server is running at http://localhost:${process.env.PORT}/graphql`);
+  console.log(
+    `the server is running at http://localhost:${process.env.PORT}/graphql`
+  );
 });

@@ -1,19 +1,18 @@
 import { importSchema } from "graphql-import";
 import { makeExecutableSchema } from "graphql-tools";
-import user from "./user/user.resolvers";
-import { model } from "../models";
+import userMutation from "./mutations/user/";
+import userQuires from "./queries/user";
+import { model } from "./models";
+import utils from "./utils";
 
 const resolvers = {
   Query: {
-    ...user.Query
+    ...userQuires
   },
   Mutation: {
-    ...user.Mutation
+    ...userMutation
   }
 };
-/** TODO: remove email  from update
- *  and fetch it using the id for the update
- */
 
 const typeDefs = importSchema(`${__dirname}/schema.graphql`);
 
@@ -26,7 +25,8 @@ export default {
   context: req => {
     return {
       req,
-      model
+      model,
+      utils
     };
   }
 };
