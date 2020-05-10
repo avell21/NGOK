@@ -1,4 +1,4 @@
-import { BaseModel } from "../../utils/baseModel";
+import { BaseModel } from "./baseModel";
 const unique = require("objection-unique")({
   fields: ["email"],
   identifiers: ["id"]

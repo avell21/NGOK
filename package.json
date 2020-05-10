@@ -1,7 +1,7 @@
 {
-  "name": "blueDot",
+  "name": "ngok",
   "engines": {
-    "node": "10.16.3"
+    "node": "12.14.0"
   },
   "version": "1.0.0",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "start": "yarn build && ./copy.sh && node dist/src/index.js",
-    "dev": "ts-node-dev -r dotenv/config --respawn --transpileOnly src/index.ts",
+    "dev": "clear  && ts-node-dev --respawn --transpileOnly src/index.ts",
     "start:worker": "yarn build && node dist/src/workers/email/consumer.js"
   },
   "husky": {
@@ -48,10 +48,8 @@
   },
   "devDependencies": {
     "@types/bull": "^3.10.6",
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.2",
     "@types/node": "^12.12.14",
-    "dotenv": "^8.2.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "ts-node-dev": "^1.0.0-pre.44"

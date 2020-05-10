@@ -1,18 +1,15 @@
-import { importSchema } from "graphql-import"; 
+import { importSchema } from "graphql-import";
 import { makeExecutableSchema } from "graphql-tools";
 import user from "./user/user.resolvers";
-import { User } from "./user/userModel"; 
+import { model } from "../models";
 
-const model = {
-  User
-};
 const resolvers = {
   Query: {
     ...user.Query
   },
   Mutation: {
-    ...user.Mutation,
-  }, 
+    ...user.Mutation
+  }
 };
 /** TODO: remove email  from update
  *  and fetch it using the id for the update
