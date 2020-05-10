@@ -15,13 +15,13 @@ export class User extends unique(BaseModel) {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["email", "phoneNumber", "firstName", "lastName", "avatar"],
+      required: [],
       properties: {
-        email: { type: "string", minLength: 1, maxLength: 255 },
-        phoneNumber: { type: "string", minLength: 1, maxLength: 255 },
-        firstName: { type: "string", minLength: 1, maxLength: 255 },
-        lastName: { type: "string", minLength: 1, maxLength: 255 },
-        avatar: { type: "string", minLength: 1, maxLength: 255 }
+        email: { type: "string" },
+        phoneNumber: { type: "string" },
+        firstName: { type: "string" },
+        lastName: { type: "string" },
+        avatar: { type: "string" }
       }
     };
   }

@@ -1,18 +1,18 @@
 export const development = {
-  user: "AVEL",
-  host: "0.0.0.0",
-  password: "Password",
-  database: "database"
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 };
 export const staging = {
-  user: "AVEL",
-  host: "0.0.0.0",
-  password: "Password",
-  database: "database"
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 };
 export const production = {
-  user: "AVEL",
-  host: "0.0.0.0",
-  password: "Password",
-  database: "database"
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 };

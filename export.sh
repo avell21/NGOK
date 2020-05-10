@@ -1,0 +1,15 @@
+export DB_HOST=0.0.0.0
+export DB_PASSWORD=Password
+export DB_USER=postgres
+export DB_NAME=test
+export SENTRY_DSN=
+export AWS_ACCESS_KEY_ID=
+export REDIS_URL=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_REGION=
+export AWS_COGNITO_CREATOR_ID=
+export AWS_COGNITO_USER_POOL_ID=
+export PORT=5100
+export STRIPE_KEY=
+export Aws_Bucket_NAME=
+export FRONTEND_URL=http://localhost:3000

@@ -16,8 +16,8 @@ type User {
   avatar: String!
   email: String!
   phoneNumber: String!
-  created_at: String
-  updated_at: String
+  createdAt: String
+  updatedAt: String
 }
 
 input createUserInput {
